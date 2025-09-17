@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boas-vindas</title>
+
+    <!-- Tailwind o rxo do site -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body
+    class="bg-gradient-to-r from-purple-700 to-blue-500 min-h-screen flex items-center justify-center"
+  >
+    <div id="welcomeBox" class="welcome-box">
+      <h1 class="title">Bem-vindo(a) ao site!</h1>
+      <p class="subtitle">
+        Estamos felizes em ter você aqui. Aproveite sua visita!
+      </p>
+      <button id="okButton" class="ok-button">OK</button>
+    </div>
+
+    <script>
+      window.onload = function () {
+        const welcomeBox = document.getElementById("welcomeBox");
+        const okButton = document.getElementById("okButton");
+
+        okButton.addEventListener("click", () => {
+          welcomeBox.style.display = "none";
+        });
+      };
+    </script>
+  </body>
+</html>
