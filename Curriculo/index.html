@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luzaydha - Currículo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --cor-fundo: #fdfcff; /* Um branco acinzentado muito leve */
+            --cor-container: #ffffff;
+            --cor-texto: #4a4a4a; /* Cinza escuro suave */
+            --cor-titulo: #2c0b4e; /* Roxo muito escuro */
+            --cor-link: #2c0b4e; /* Roxo médio para links e destaques */
+            --cor-borda: #e0e0e0; /* Cinza claro para bordas */
+            --cor-fundo-botao: #6a11cb; /* Roxo vibrante para botões */
+            --cor-texto-botao: #ffffff;
+            --sombra-leve: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --sombra-media: 0 8px 20px rgba(0, 0, 0, 0.12);
+            --sombra-habilidades: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+            /* Novas fontes */
+            --fonte-titulo: 'Montserrat', sans-serif;
+            --fonte-corpo: 'Open Sans', sans-serif;
+
+            font-family: var(--fonte-corpo);
+            line-height: 1.6;
+        }
+        body.dark-mode {
+            --cor-fundo: #1c133a; /* Roxo muito escuro */
+            --cor-container: #2a1a4c; /* Roxo escuro para container */
+            --cor-texto: #e2e2e2; /* Texto claro */
+            --cor-titulo: #e8dff7; /* Título lilás claro */
+            --cor-link: #b39ddb; /* Link lilás */
+            --cor-borda: #4a3a6b; /* Borda escura */
+            --cor-fundo-botao: #a372d7; /* Roxo mais claro para botão no dark mode */
+            --cor-texto-botao: #1c133a;
+            --sombra-leve: 0 4px 15px rgba(0, 0, 0, 0.2);
+            --sombra-media: 0 10px 25px rgba(0, 0, 0, 0.3);
+            --sombra-habilidades: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 25px; /* Mais padding na borda da página */
+            transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 960px; /* Aumentado para mais espaço */
+            margin: 0 auto;
+            background-color: var(--cor-container);
+            border-radius: 15px; /* Cantos mais arredondados */
+            box-shadow: var(--sombra-media);
+            overflow: hidden;
+            transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--fonte-titulo);
+            color: var(--cor-titulo);
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.8rem; 
+            margin-bottom: 0.25rem;
+        }
+
+        h2 {
+            font-size: 1.6rem; 
+            font-weight: 500; 
+            margin-bottom: 1.8rem;
+            color: var(--cor-link); 
+        }
+
+        h3 {
+            font-size: 1.35rem; 
+            color: var(--cor-link);
+            border-bottom: 2px solid var(--cor-borda);
+            padding-bottom: 8px; 
+            margin-top: 2.5rem; 
+            margin-bottom: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px; 
+        }
+        
+        h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--cor-titulo);
+        }
+
+        a {
+            color: var(--cor-link);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--cor-fundo-botao); /* Cor mais escura no hover */
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem; /* Um pouco maior */
+        }
+
+        /* --- Header --- */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Alinha o conteúdo ao topo */
+            padding: 3rem 3.5rem; /* Mais padding */
+            /* REMOVIDO: Gradiente. VOLTOU PARA COR SÓLIDA */
+            background-color: var(--cor-link); /* Roxo principal */
+            color: #ffffff; /* Texto branco no header */
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1, header h2 {
+            color: #ffffff; /* Garante texto branco */
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 12px; /* Espaçamento entre botões */
+            align-items: flex-start; /* ALINHADO AO TOPO */
+        }
+
+        .header-btn {
+            background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente para o botão */
+            color: var(--cor-texto-botao);
+            border: none;
+            padding: 12px; /* Mais padding */
+            border-radius: 50%; /* Botões totalmente redondos */
+            cursor: pointer;
+            font-size: 1.1rem; /* Ícones maiores */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;  /* Largura fixa */
+            height: 48px; /* Altura fixa */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .header-btn:hover {
+            background-color: rgba(255, 255, 255, 0.35); /* Mais opaco no hover */
+            transform: scale(1.1);
+        }
+        
+        .dark-mode header .header-btn {
+            background-color: rgba(255, 255, 255, 0.25); /* Fundo semi-transparente para o botão no dark mode */
+            color: var(--cor-texto-botao);
+        }
+        .dark-mode header .header-btn:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+
+        /* --- Main Content --- */
+
+        .resume-body {
+            display: flex;
+            background-color: var(--cor-container); /* Garante fundo consistente */
+        }
+
+        .sidebar {
+            flex: 0 0 320px; /* Largura um pouco maior da sidebar */
+            background-color: var(--cor-fundo); /* Usa a cor de fundo geral, que é um lilás claro */
+            padding: 2rem 2.5rem; /* Mais padding */
+            border-right: 1px solid var(--cor-borda);
+            transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+        }
+        
+        .dark-mode .sidebar {
+            background-color: var(--cor-container); /* No modo escuro, usa a cor do container para a sidebar */
+            border-right: 1px solid var(--cor-borda);
+        }
+
+        .main-content {
+            flex: 1; /* Ocupa o resto do espaço */
+            padding: 2rem 3.5rem 3.5rem 3.5rem; /* Mais padding */
+        }
+
+        section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /* Seção Contato */
+        #contato ul {
+            display: grid; /* Novo: Layout de grade */
+            grid-template-columns: 1fr; /* Uma coluna no padrão */
+            gap: 10px; /* Espaçamento entre itens */
+        }
+        #contato li {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espaço entre ícone e texto */
+        }
+        #contato li i {
+            color: var(--cor-link);
+            font-size: 1.1em;
+        }
+        /* Cor dos ícones de contato no modo claro */
+        body:not(.dark-mode) #contato li i {
+            color: var(--cor-link); 
+        }
+        /* Cor dos ícones de contato no modo escuro */
+        body.dark-mode #contato li i {
+            color: var(--cor-titulo); /* Usa a cor do título para ícones no dark mode */
+        }
+
+
+        /* Seção Experiência */
+        .job {
+            border-bottom: 1px solid var(--cor-borda);
+            padding-bottom: 1.8rem; /* Mais padding */
+            margin-bottom: 1.8rem; /* Mais margin */
+        }
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .job h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .job strong {
+            font-weight: 600;
+            color: var(--cor-titulo);
+            display: block; /* Para ficar em linha separada */
+            margin-bottom: 0.25rem;
+        }
+        .job span {
+            float: right;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--cor-texto); /* Usa cor de texto padrão */
+        }
+        .job ul {
+            list-style: disc;
+            padding-left: 25px;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Seção Formação */
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+        .education-item h4 {
+            margin-bottom: 0.5rem;
+        }
+        .education-item strong {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .education-item span {
+            float: right;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--cor-texto);
+        }
+
+        /* Seção Habilidades */
+        #habilidades ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px; /* Mais espaçamento */
+        }
+        #habilidades li {
+            background: linear-gradient(45deg, var(--cor-link), var(--cor-fundo-botao)); /* Gradiente */
+            color: #ffffff;
+            padding: 9px 18px; /* Mais preenchimento */
+            border-radius: 25px; /* Pílulas mais arredondadas */
+            font-size: 0.95rem;
+            font-weight: 600;
+            
+            display: inline-flex;
+            align-items: center;
+            gap: 10px; /* Mais espaço entre ícone e texto */
+            
+            box-shadow: var(--sombra-habilidades);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        
+        #habilidades li:hover {
+            transform: translateY(-3px) scale(1.02); /* Efeito de flutuação */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra mais intensa no hover */
+        }
+
+        #habilidades li i {
+            font-size: 1.2em; /* Ícones um pouco maiores */
+            /* Novo: Gradiente nos ícones */
+            background: -webkit-linear-gradient(45deg, #f0e6fa, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Responsividade --- */
+
+        @media (max-width: 850px) { /* Breakpoint para telas menores */
+            body {
+                padding: 10px; /* Menos padding em telas pequenas */
+            }
+            .container {
+                border-radius: 0;
+                box-shadow: none; /* Sem sombra em telas pequenas */
+            }
+            
+            .resume-body {
+                flex-direction: column; /* Colunas empilhadas */
+            }
+            
+            .sidebar {
+                flex: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--cor-borda); /* Adiciona borda inferior */
+            }
+
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+            
+            .header-buttons {
+                margin-top: 1.5rem;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .main-content {
+                padding: 2rem 1.5rem 2.5rem 1.5rem;
+            }
+            
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.3rem; }
+            h3 { font-size: 1.15rem; }
+            h4 { font-size: 1rem; }
+            p { font-size: 0.95rem; }
+
+            .job span, .education-item span {
+                float: none;
+                display: block;
+                margin-top: 5px;
+            }
+            
+            #contato ul {
+                grid-template-columns: 1fr; /* Sempre uma coluna no mobile */
+                gap: 8px;
+            }
+        }
+        
+        /* Estilos de Impressão */
+        @media print {
+            .header-buttons {
+                display: none; /* Esconde os botões */
+            }
+            
+            body {
+                padding: 0;
+                background-color: #ffffff; /* Fundo branco para impressão */
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .sidebar {
+                background-color: #f0f0f0; /* Um fundo cinza claro para a sidebar na impressão */
+                border-right: 1px solid #ccc;
+            }
+            
+            h1, h2, h3, h4 {
+                color: #000; /* Títulos pretos para melhor leitura */
+            }
+            a {
+                color: #0056b3; /* Links azuis */
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Luzaydha Sousa Santos</h1>
+                <h2>Estudante de Ciência da Computação</h2>
+                </div>
+            <div class="header-buttons">
+                <button id="print-button" class="header-btn" title="Imprimir Currículo">
+                    <i class="fas fa-print"></i>
+                </button>
+                <button id="theme-toggle" class="header-btn" title="Alternar para Modo Escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="resume-body">
+            <aside class="sidebar">
+                <section id="contato">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (65) 99291-4405</li>
+                        <li><i class="fas fa-envelope"></i> luzaydhasousa@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i>Cuiabá, MT</li>
+                        <li><i class="fab fa-github"></i> <a href="https://github.com/luzaydha" target="_blank">github.com/luzaydha</a></li>
+                    </ul>
+                </section>
+                
+                <section id="habilidades">
+                    <h3>Principais Habilidades</h3>
+                    <ul>
+                        <li><i class="fab fa-html5"></i> HTML5 & CSS3</li>
+                        <li><i class="fab fa-js-square"></i> JavaScript (ES6+)</li>
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fas fa-database"></i> SQL</li>
+                        <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+                        <li><i class="fas fa-laptop-code"></i> Metodologias Ágeis</li>
+                       </ul>
+                </section>
+            </aside>
+            
+            <main class="main-content">
+                <section id="resumo">
+                    <h3>Resumo Profissional</h3>
+                    <p>
+                        Sou estudante de Ciências da Computação criativo e detalhista, com foco em desenvolvimento front-end. Proficiente em HTML, CSS e JavaScript. Busco uma oportunidade para colaborar com equipes de design e produto para criar interfaces intuitivas e acessíveis.
+                    </p>
+                    </section>
+
+                <section id="experiencia">
+                    <h3>Experiência Profissional</h3>
+                    
+                    <div class="job">
+                        <h4>SINFRA-Secretaria de Estado de Infraestrutura e Logística</h4>
+                        <strong>Estagiário de Suporte Técnico</strong>
+                        <span>MAR 2025 - Atual</span>
+                        <ul>
+                        <li>Manutenção de hardware e periféricos;</li>
+                        <li>Atendimento inicial (Nível 1) aos usuários para resolver problemas;</li>
+                        <li>Auxiliar na manutenção de computadores e redes.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="formacao">
+                    <h3>Formação Acadêmica</h3>
+                    
+                    <div class="education-item">
+                        <h4>UNIC - Universidade de Cuiabá</h4>
+                        <strong>Bacharelado em Ciência da Computação</strong>
+                        <span>2023 - Atual</span>
+                    </div>
+                    </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- O JavaScript está incorporado aqui --><script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleButton = document.getElementById('theme-toggle');
+            const printButton = document.getElementById('print-button');
+            const body = document.body;
+            const themeIcon = themeToggleButton.querySelector('i');
+
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+            function applyTheme(isDarkMode) {
+                if (isDarkMode) {
+                    body.classList.add('dark-mode');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    themeToggleButton.title = 'Alternar para Modo Claro';
+                } else {
+                    body.classList.remove('dark-mode');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    themeToggleButton.title = 'Alternar para Modo Escuro';
+                }
+            }
+
+            // Aplica o tema inicial com base na preferência do sistema
+            applyTheme(prefersDarkScheme.matches);
+
+            // Adiciona ouvinte para o botão de imprimir
+            printButton.addEventListener('click', () => {
+                window.print();
+            });
+
+            // Adiciona ouvinte para o botão de tema
+            themeToggleButton.addEventListener('click', () => {
+                applyTheme(!body.classList.contains('dark-mode')); // Inverte o tema atual
+            });
+
+            // Ouve mudanças na preferência de tema do sistema operacional
+            prefersDarkScheme.addEventListener('change', (e) => {
+                applyTheme(e.matches);
+            });
+        });
+    </script>
+</body>
+</html>
